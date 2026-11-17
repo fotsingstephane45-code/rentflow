@@ -1,0 +1,10 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
+import { SiteFooter, SiteHeader } from '@/components/site-header'
+
+export const metadata: Metadata = { title: 'Confidentialité | RentFlow', description: 'Informations sur les données traitées par RentFlow.' }
+
+export default function ConfidentialityPage() {
+  return <div className="site-shell"><SiteHeader /><main><section className="page-intro section-wrap"><span className="eyebrow"><span className="eyebrow-dot" /> INFORMATIONS DE CONFIDENTIALITÉ</span><h1>Vos informations<br /><em>vous appartiennent.</em></h1><p>RentFlow traite les données de compte et de gestion locative que vous enregistrez pour fournir les fonctions de suivi.</p></section><section className="policy-page section-wrap"><article><ShieldCheck size={22} /><h2>Données du compte</h2><p>L’inscription enregistre votre adresse e-mail, nom, téléphone et type de compte. Les numéros Mobile Money sont facultatifs. Supabase Auth gère le mot de passe et la session; RentFlow ne stocke pas votre mot de passe dans ses tables métier.</p></article><article><ShieldCheck size={22} /><h2>Données de gestion</h2><p>Les logements, locataires, baux, échéances et paiements que vous ajoutez sont enregistrés dans Supabase et isolés selon votre compte. Les liens locataires donnent accès à une échéance précise et doivent être traités comme des liens privés. Le formulaire de contact ouvre votre messagerie avec le texte saisi; RentFlow ne reçoit pas ce message par ce formulaire.</p></article><article><ShieldCheck size={22} /><h2>Informations à compléter avant lancement</h2><p>Cette page doit être complétée avant l’ouverture publique avec l’identité et les coordonnées du responsable, les durées de conservation, la procédure d’exercice des droits et de suppression du compte, ainsi que les détails d’hébergement. N’utilisez pas encore RentFlow pour des documents sensibles ou des obligations légales.</p></article><Link href="/contact" className="underlined-link">Poser une question <ArrowRight size={15} /></Link></section></main><SiteFooter /></div>
+}
